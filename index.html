@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/animation.css" />
+  </head>
+  <body id="body">
+    <!-- cloak -->
+    <div id="cloak" class="w-screen h-screen flex justify-center items-center">
+      <!-- loading hourglass -->
+      <div
+        class="relative w-20 h-20 rounded-full flex justify-center items-center"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-full rounded-full"
+          style="
+            border: 4px solid transparent;
+            border-top-color: black;
+            animation: spin 1s linear infinite;
+          "
+        ></div>
+        <div class="rounded-full w-10 h-10 overflow-hidden">
+          <img
+            src="/images/hourglass.gif"
+            class="w-full h-full"
+            alt="loading hourglass"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="content" style="display: none">
+      <!-- navbar -->
+      <nav class="border-b border-gray-300 dark:border-black">
+        <ul
+          class="flex justify-center items-center gap-20 p-4 dark:bg-main-dark dark:title-dark"
+        >
+          <li>
+            <a href="#" class="text-lg font-semibold hover:text-highlight"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-lg font-semibold hover:text-highlight"
+              >Project</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-lg font-semibold hover:text-highlight"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- main -->
+      <main class="p-4 dark:bg-main-dark dark:text-white"></main>
+    </div>
+    <!-- js -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
