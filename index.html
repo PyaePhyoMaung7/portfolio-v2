@@ -35,12 +35,13 @@
     <div id="content" class="opacity-0" style="display: none">
       <!-- navbar -->
       <nav
-        class="border-b border-gray-300 dark:border-black relative grid grid-cols-12 px-10"
+        class="xs:border-b border-gray-300 dark:border-black bg-white dark:bg-main-dark dark:title-dark relative grid grid-cols-12 px-10 z-10"
+        style="height: 50px"
       >
+        <!-- screen width >= 520px -->
         <!-- navigation -->
         <ul
-          class="col-span-8 pr-20 flex justify-end items-center gap-20 p-4"
-          style="height: 50px"
+          class="col-span-8 2xl:col-span-7 hidden xs:flex justify-start sm:justify-center md:justify-end xl:pr-22 2xl:pr-0 items-center gap-8 sm:gap-18 pr-4"
         >
           <li>
             <a
@@ -64,7 +65,34 @@
             ></a>
           </li>
         </ul>
-        <ul class="col-span-4 flex justify-end items-center gap-4">
+        <ul
+          class="col-span-12 xs:col-span-4 2xl:col-span-5 flex justify-start xs:justify-end items-center gap-4"
+        >
+          <!-- screen width < 520px menu button-->
+          <li class="xs:hidden">
+            <div
+              class="overflow-hidden rounded-xl bg-secondary-light dark:bg-secondary-dark"
+            >
+              <button
+                id="menu-btn"
+                class="focus:outline-none w-[40px] h-[30px] p-0 flex justify-center items-center cursor-pointer"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 6h22M1 12h22M1 18h22"
+                  />
+                </svg>
+              </button>
+            </div>
+          </li>
           <!-- language selection -->
           <li>
             <div
@@ -121,6 +149,33 @@
           </li>
         </ul>
       </nav>
+      <!-- Menu -->
+      <div id="menu" class="xs:hidden z-1 translate-y-[-100px]">
+        <ul class="z-1 px-10 pb-2">
+          <li class="pb-2">
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="about"
+            ></a>
+          </li>
+          <li class="pb-2">
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="project"
+            ></a>
+          </li>
+          <li class="pb-1">
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="contact"
+            ></a>
+          </li>
+        </ul>
+        <div class="w-full nav-border-bottom"></div>
+      </div>
       <!-- main -->
       <main class="p-4 dark:bg-main-dark dark:text-white"></main>
     </div>

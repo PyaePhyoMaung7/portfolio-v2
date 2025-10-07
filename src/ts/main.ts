@@ -26,6 +26,8 @@ const loadResources = async () => {
   const btnJp = document.querySelector<HTMLButtonElement>("#btn-jp");
   const btnJpText = btnJp!.querySelector<HTMLSpanElement>("#btn-jp-text");
   const modeToggle = document.querySelector<HTMLInputElement>("#mode-toggle");
+  const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
+  const menu = document.querySelector<HTMLDivElement>("#menu");
 
   // Load saved or default language
   const storageKey = "lang";
@@ -72,5 +74,24 @@ const loadResources = async () => {
       document.documentElement.classList.remove("dark");
       localStorage.setItem(modeStorageKey, "light");
     }
+  });
+
+  // Toggle menu
+  let isMenuOpen = false;
+  menuBtn!.addEventListener("click", () => {
+    if (!isMenuOpen) {
+      gsap.to(menu, {
+        y: 0,
+        duration: 0.2,
+        ease: "power1.inOut",
+      });
+    } else {
+      gsap.to(menu, {
+        y: -100,
+        duration: 0.2,
+        ease: "power1.inOut",
+      });
+    }
+    isMenuOpen = !isMenuOpen;
   });
 };

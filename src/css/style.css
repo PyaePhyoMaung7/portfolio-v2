@@ -37,6 +37,7 @@
 @theme {
   --font-inter: Inter, sans-serif;
   --font-mincho: Mincho, sans-serif;
+  --breakpoint-xs: 520px;
 }
 
 * {
@@ -106,4 +107,7 @@ input[type="checkbox"]:checked + .display label .circle .sun {
 input[type="checkbox"]:checked + .display label .circle .moon {
   margin-left: 0%;
   opacity: 1;
+}
+.nav-border-bottom {
+  @apply border-b border-gray-300 dark:border-black;
 }
