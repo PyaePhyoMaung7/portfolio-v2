@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="/src/css/animation.css" />
   </head>
-  <body id="body" class="font-inter">
+  <body id="body" class="font-inter dark:bg-main-dark dark:title-dark">
     <!-- cloak -->
     <div id="cloak" class="w-screen h-screen flex justify-center items-center">
       <!-- loading hourglass -->
@@ -32,11 +32,15 @@
         </div>
       </div>
     </div>
-    <div id="content" style="display: none">
+    <div id="content" class="opacity-0" style="display: none">
       <!-- navbar -->
-      <nav class="border-b border-gray-300 dark:border-black relative">
+      <nav
+        class="border-b border-gray-300 dark:border-black relative grid grid-cols-12 px-10"
+      >
+        <!-- navigation -->
         <ul
-          class="flex justify-center items-center gap-20 p-4 dark:bg-main-dark dark:title-dark"
+          class="col-span-8 pr-20 flex justify-end items-center gap-20 p-4"
+          style="height: 50px"
         >
           <li>
             <a
@@ -59,25 +63,63 @@
               data-i18n="contact"
             ></a>
           </li>
-          <li class="overflow-hidden select-none shadow-inner">
-            <button
-              id="btn-en"
-              class="rounded-l-full text-center border-2 cursor-pointer px-2 text-sm font-semibold"
-              aria-label="Switch to English"
+        </ul>
+        <ul class="col-span-4 flex justify-end items-center gap-4">
+          <!-- language selection -->
+          <li>
+            <div
+              class="overflow-hidden rounded-xl bg-secondary-light dark:bg-secondary-dark"
             >
-              <span id="btn-en-text" class="hover:text-highlight">EN</span>
-            </button>
-            <button
-              id="btn-jp"
-              class="rounded-r-full border-2 border-l-0 cursor-pointer px-2 text-sm font-semibold -ml-2"
-              aria-label="Switch to Japanese"
-              style="font-family: 'mincho'; letter-spacing: 0"
-            >
-              <span id="btn-jp-text" class="hover:text-highlight">日本</span>
-            </button>
+              <button
+                id="btn-en"
+                class="text-center cursor-pointer py-[1.5px] pl-3 text-sm font-semibold"
+                aria-label="Switch to English"
+              >
+                <span id="btn-en-text" class="hover:text-highlight">EN</span>
+              </button>
+              <button
+                id="btn-jp"
+                class="text-center cursor-pointer py-[1.5px] pr-3 text-sm font-semibold"
+                aria-label="Switch to Japanese"
+                style="font-family: 'mincho'; letter-spacing: 0"
+              >
+                <span id="btn-jp-text" class="hover:text-highlight">日本</span>
+              </button>
+            </div>
+          </li>
+          <!-- light/dark mode -->
+          <li>
+            <input type="checkbox" id="mode-toggle" />
+            <div class="display">
+              <label for="mode-toggle" class="">
+                <div class="circle">
+                  <svg
+                    class="sun"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
+                    />
+                  </svg>
+                  <svg
+                    class="moon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </label>
+            </div>
           </li>
         </ul>
-        <!-- <button type="button" class="absolute top-0 right-0">Click Me</button> -->
       </nav>
       <!-- main -->
       <main class="p-4 dark:bg-main-dark dark:text-white"></main>

@@ -1,14 +1,22 @@
+import { gsap } from "gsap";
 import { i18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadResources();
-  display();
+  setTimeout(display, 100);
 });
 
 // Display web
 const display = () => {
-  document.querySelector<HTMLBodyElement>("#cloak")!.style.display = "none";
-  document.querySelector<HTMLBodyElement>("#content")!.style.display = "block";
+  const cloak = document.querySelector<HTMLBodyElement>("#cloak")!;
+  const content = document.querySelector<HTMLBodyElement>("#content")!;
+  cloak.style.display = "none";
+  content.style.display = "block";
+  gsap.to(content, {
+    opacity: 1,
+    duration: 0.3,
+    ease: "power1.out",
+  });
 };
 
 // Do before web is displayed
@@ -17,6 +25,7 @@ const loadResources = async () => {
   const btnEnText = btnEn!.querySelector<HTMLSpanElement>("#btn-en-text");
   const btnJp = document.querySelector<HTMLButtonElement>("#btn-jp");
   const btnJpText = btnJp!.querySelector<HTMLSpanElement>("#btn-jp-text");
+  const modeToggle = document.querySelector<HTMLInputElement>("#mode-toggle");
 
   // Load saved or default language
   const storageKey = "lang";
@@ -41,5 +50,27 @@ const loadResources = async () => {
     btnEnText!.classList.remove("text-highlight");
     localStorage.setItem(storageKey, "jp");
     i18n.setLang("jp");
+  });
+
+  // Load saved or default language
+  const modeStorageKey = "mode";
+  const savedMode = localStorage.getItem(modeStorageKey) || "dark";
+  if (savedMode === "dark") {
+    document.documentElement.classList.add("dark");
+    modeToggle!.checked = true;
+  } else {
+    document.documentElement.classList.remove("dark");
+    modeToggle!.checked = false;
+  }
+
+  // Toggle light/dark mode
+  modeToggle!.addEventListener("change", () => {
+    if (modeToggle!.checked) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem(modeStorageKey, "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem(modeStorageKey, "light");
+    }
   });
 };
