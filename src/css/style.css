@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@utility bg-main-dark {
+  background-color: #1b1b1f;
+}
+@utility text-highlight {
+  color: #8b40c6;
+}
+@utility title-dark {
+  color: #dfdfd6;
+}
+@utility title-light {
+  color: #dfdfd6;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mincho";
+  src: url("/fonts/mincho.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@theme {
+  --font-inter: Inter, sans-serif;
+  --font-mincho: Mincho, sans-serif;
+}
+
+[data-cloak] {
+  display: none !important;
+}

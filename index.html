@@ -5,10 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/src/style.css" />
-    <link rel="stylesheet" href="/src/animation.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/animation.css" />
   </head>
-  <body id="body">
+  <body id="body" class="font-inter">
     <!-- cloak -->
     <div id="cloak" class="w-screen h-screen flex justify-center items-center">
       <!-- loading hourglass -->
@@ -34,31 +34,55 @@
     </div>
     <div id="content" style="display: none">
       <!-- navbar -->
-      <nav class="border-b border-gray-300 dark:border-black">
+      <nav class="border-b border-gray-300 dark:border-black relative">
         <ul
           class="flex justify-center items-center gap-20 p-4 dark:bg-main-dark dark:title-dark"
         >
           <li>
-            <a href="#" class="text-lg font-semibold hover:text-highlight"
-              >About</a
-            >
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="about"
+            ></a>
           </li>
           <li>
-            <a href="#" class="text-lg font-semibold hover:text-highlight"
-              >Project</a
-            >
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="project"
+            ></a>
           </li>
           <li>
-            <a href="#" class="text-lg font-semibold hover:text-highlight"
-              >Contact</a
+            <a
+              href="#"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="contact"
+            ></a>
+          </li>
+          <li class="overflow-hidden select-none shadow-inner">
+            <button
+              id="btn-en"
+              class="rounded-l-full text-center border-2 cursor-pointer px-2 text-sm font-semibold"
+              aria-label="Switch to English"
             >
+              <span id="btn-en-text" class="hover:text-highlight">EN</span>
+            </button>
+            <button
+              id="btn-jp"
+              class="rounded-r-full border-2 border-l-0 cursor-pointer px-2 text-sm font-semibold -ml-2"
+              aria-label="Switch to Japanese"
+              style="font-family: 'mincho'; letter-spacing: 0"
+            >
+              <span id="btn-jp-text" class="hover:text-highlight">日本</span>
+            </button>
           </li>
         </ul>
+        <!-- <button type="button" class="absolute top-0 right-0">Click Me</button> -->
       </nav>
       <!-- main -->
       <main class="p-4 dark:bg-main-dark dark:text-white"></main>
     </div>
     <!-- js -->
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>
