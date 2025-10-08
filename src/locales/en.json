@@ -1,5 +1,12 @@
 {
   "about": "About",
   "project": "Projects",
-  "contact": "Contact"
+  "contact": "Contact",
+  "greet": "Hello It's me",
+  "name1": "Pyae Phyo ",
+  "name2": "Maung",
+  "name3": "",
+  "role": "Software Engineer",
+  "closing": "I look forward to working with you",
+  "cvDownload": "Download CV"
 }

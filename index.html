@@ -35,13 +35,19 @@
     <div id="content" class="opacity-0" style="display: none">
       <!-- navbar -->
       <nav
-        class="xs:border-b border-gray-300 dark:border-black bg-white dark:bg-main-dark dark:title-dark relative grid grid-cols-12 px-10 z-10"
+        class="flex justify-between items-center xs:border-b border-gray-300 dark:border-black bg-white dark:bg-main-dark dark:title-dark sticky top-0 px-5 xs:px-10 z-10"
         style="height: 50px"
       >
-        <!-- screen width >= 520px -->
+        <!-- screen width >= 590px -->
         <!-- navigation -->
+        <div
+          class="flex justify-start items-center xs:text-lg font-semibold italic"
+          style="font-family: cursive"
+        >
+          Maung
+        </div>
         <ul
-          class="col-span-8 2xl:col-span-7 hidden xs:flex justify-start sm:justify-center md:justify-end xl:pr-22 2xl:pr-0 items-center gap-8 sm:gap-18 pr-4"
+          class="hidden xs:flex justify-start sm:justify-center md:justify-end items-center gap-5 sm:gap-10 md:gap-18"
         >
           <li>
             <a
@@ -65,34 +71,7 @@
             ></a>
           </li>
         </ul>
-        <ul
-          class="col-span-12 xs:col-span-4 2xl:col-span-5 flex justify-start xs:justify-end items-center gap-4"
-        >
-          <!-- screen width < 520px menu button-->
-          <li class="xs:hidden">
-            <div
-              class="overflow-hidden rounded-xl bg-secondary-light dark:bg-secondary-dark"
-            >
-              <button
-                id="menu-btn"
-                class="focus:outline-none w-[40px] h-[30px] p-0 flex justify-center items-center cursor-pointer"
-              >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 6h22M1 12h22M1 18h22"
-                  />
-                </svg>
-              </button>
-            </div>
-          </li>
+        <ul class="flex justify-start xs:justify-end items-center gap-4">
           <!-- language selection -->
           <li>
             <div
@@ -147,11 +126,39 @@
               </label>
             </div>
           </li>
+          <!-- screen width < 590px menu button-->
+          <li class="xs:hidden">
+            <div
+              class="overflow-hidden rounded-xl bg-secondary-light dark:bg-secondary-dark"
+            >
+              <button
+                id="menu-btn"
+                class="focus:outline-none w-[40px] h-[30px] p-0 flex justify-center items-center cursor-pointer"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 6h22M1 12h22M1 18h22"
+                  />
+                </svg>
+              </button>
+            </div>
+          </li>
         </ul>
       </nav>
       <!-- Menu -->
-      <div id="menu" class="xs:hidden z-1 translate-y-[-100px]">
-        <ul class="z-1 px-10 pb-2">
+      <div
+        id="menu"
+        class="xs:hidden z-1 translate-y-[-100px] bg-white dark:bg-main-dark dark:title-dark"
+      >
+        <ul class="z-1 px-5 xs:px-10 pb-2">
           <li class="pb-2">
             <a
               href="#"
@@ -177,7 +184,146 @@
         <div class="w-full nav-border-bottom"></div>
       </div>
       <!-- main -->
-      <main class="p-4 dark:bg-main-dark dark:text-white"></main>
+      <main class="p-4 dark:bg-main-dark dark:text-white px-5 xs:px-10">
+        <section
+          class="h-[100dvh] mt-[-150px] xs:mt-[-85px] flex flex-col sm:flex-row justify-center items-center sm:justify-around"
+        >
+          <div class="text-center">
+            <p class="mb-2 text-[20px] xs:text-[25px]" data-i18n="greet"></p>
+            <p class="mb-2 flex flex-wrap justify-center items-center">
+              <span
+                data-i18n="name1"
+                class="text-[25px] xs:text-[40px] font-bold whitespace-pre"
+              ></span>
+              <span
+                data-i18n="name2"
+                class="text-[25px] xs:text-[40px] font-bold"
+              ></span>
+              <span data-i18n="name3" class="text-[15px] xs:text-[20px]"></span>
+            </p>
+            <p
+              data-i18n="role"
+              class="mb-2 text-[22px] xs:text-[30px] font-semibold"
+            ></p>
+            <p class="mb-5 text-[15px] xs:text-[20px]" data-i18n="closing"></p>
+            <div class="mb-2">
+              <a href="/cv/Pyae_Phyo_Maung_Resume.docx" download>
+                <button
+                  class="cv-button bg-highlight text-white px-6 py-2 cursor-pointer rounded-3xl"
+                  data-i18n="cvDownload"
+                ></button>
+              </a>
+            </div>
+            <div
+              class="flex justify-center items-center overflow-hidden -mt-3 py-1 gap-10 h-[70px] -ml-6"
+            >
+              <a
+                href="https://www.facebook.com/share/1DQHrNQGR8/"
+                class="social-icon"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-facebook scale-120 hover:scale-150"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/hakkai_0w0?igsh=MTh6bjNybXJ0dmszOQ=="
+                class="social-icon"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-instagram scale-120 hover:scale-150"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://github.com/PyaePhyoMaung7" class="social-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-github scale-120 hover:scale-150"
+                >
+                  <path
+                    d="M9 19c-5 1.5 -5 -2.5 -7 -3m14 6v-3.87a3.366 3.366 0 0 0 -0.94 -2.61c3.14 -0.351 6.44 -1.54 6.44 -7a5.438 5.438 0 0 0 -1.5 -3.751 5.074 5.074 0 0 0 -0.09 -3.769s-1.179 -0.35 -3.91 1.48a13.401 13.401 0 0 0 -7 0c-2.73 -1.83 -3.91 -1.48 -3.91 -1.48a5.074 5.074 0 0 0 -0.09 3.769 5.438 5.438 0 0 0 -1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.366 3.366 0 0 0 -0.94 2.58v3.871"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pyae-phyo-maung-a534672b2/"
+                class="social-icon"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-linkedin scale-120 hover:scale-150"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="mailto:pyaephyomg1004@gmail.com" class="social-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-mail scale-120 hover:scale-150"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="mt-5 sm:mt-0 w-[180px] h-[245px] md:w-[220px] md:h-[320px] overflow-hidden border-b-2 border-highlight rounded-lg"
+          >
+            <img
+              src="/images/profile.png"
+              class="object-cover object-center"
+              alt="profile image"
+            />
+          </div>
+        </section>
+      </main>
     </div>
     <!-- js -->
     <script type="module" src="/src/ts/main.ts"></script>

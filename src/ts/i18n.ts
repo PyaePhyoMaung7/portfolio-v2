@@ -14,7 +14,7 @@ class I18n {
 
   t(key: string): string {
     let currentTrans: any = this.translations[this.currentLang];
-    return currentTrans[key] || key;
+    return currentTrans[key] || "";
   }
 
   private updateTexts() {
