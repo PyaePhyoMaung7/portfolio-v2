@@ -80,13 +80,13 @@ const loadResources = async () => {
   menuBtn!.addEventListener("click", () => {
     if (!isMenuOpen) {
       gsap.to(menu, {
-        y: 0,
+        top: "45px",
         duration: 0.2,
         ease: "power1.inOut",
       });
     } else {
       gsap.to(menu, {
-        y: -100,
+        top: "-50px",
         duration: 0.2,
         ease: "power1.inOut",
       });

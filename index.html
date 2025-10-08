@@ -156,7 +156,7 @@
       <!-- Menu -->
       <div
         id="menu"
-        class="xs:hidden z-1 translate-y-[-100px] bg-white dark:bg-main-dark dark:title-dark"
+        class="xs:hidden z-1 absolute top-[-50px] bg-white dark:bg-main-dark dark:title-dark"
       >
         <ul class="z-1 px-5 xs:px-10 pb-2">
           <li class="pb-2">
@@ -181,12 +181,12 @@
             ></a>
           </li>
         </ul>
-        <div class="w-full nav-border-bottom"></div>
+        <div class="w-screen nav-border-bottom"></div>
       </div>
       <!-- main -->
       <main class="p-4 dark:bg-main-dark dark:text-white px-5 xs:px-10">
         <section
-          class="h-[100dvh] mt-[-150px] xs:mt-[-85px] flex flex-col sm:flex-row justify-center items-center sm:justify-around"
+          class="h-[calc(100lvh-85px)] flex flex-col sm:flex-row justify-center items-center sm:justify-around"
         >
           <div class="text-center">
             <p class="mb-2 text-[20px] xs:text-[25px]" data-i18n="greet"></p>
@@ -314,7 +314,7 @@
             </div>
           </div>
           <div
-            class="mt-5 sm:mt-0 w-[180px] h-[245px] md:w-[220px] md:h-[320px] overflow-hidden border-b-2 border-highlight rounded-lg"
+            class="mt-5 sm:mt-0 w-[180px] h-[260px] md:w-[220px] md:h-[320px] overflow-clip border-b-2 border-highlight rounded-lg"
           >
             <img
               src="/images/profile.png"
