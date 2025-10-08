@@ -1,16 +1,11 @@
-type Translations = Record<string, string>;
+import en from "@/locales/en.json";
+import ja from "@/locales/ja.json";
+
+type Translations = Record<string, Record<string, string>>;
 
 class I18n {
-  private translations: Translations = {};
+  private translations: Translations = { en, ja };
   private currentLang: string = "en";
-  private langs: string[] = ["en", "jp"];
-
-  async load() {
-    for (const lang of this.langs) {
-      const response = await fetch(`/src/locales/${lang}.json`);
-      this.translations[lang] = await response.json();
-    }
-  }
 
   setLang(lang: string) {
     this.currentLang = lang;

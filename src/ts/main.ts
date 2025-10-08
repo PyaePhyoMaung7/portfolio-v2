@@ -37,7 +37,6 @@ const loadResources = async () => {
   } else {
     btnJpText!.classList.add("text-highlight");
   }
-  await i18n.load();
   i18n.setLang(savedLang);
 
   // Toggle language
@@ -50,8 +49,8 @@ const loadResources = async () => {
   btnJp!.addEventListener("click", () => {
     btnJpText!.classList.add("text-highlight");
     btnEnText!.classList.remove("text-highlight");
-    localStorage.setItem(storageKey, "jp");
-    i18n.setLang("jp");
+    localStorage.setItem(storageKey, "ja");
+    i18n.setLang("ja");
   });
 
   // Load saved or default language
