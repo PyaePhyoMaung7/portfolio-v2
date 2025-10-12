@@ -1,9 +1,11 @@
 import { gsap } from "gsap";
+import { profile } from "./animation";
 import { i18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadResources();
   setTimeout(display, 100);
+  setTimeout(showAnimations, 500);
 });
 
 // Display web
@@ -93,4 +95,8 @@ const loadResources = async () => {
     }
     isMenuOpen = !isMenuOpen;
   });
+};
+
+const showAnimations = () => {
+  profile();
 };

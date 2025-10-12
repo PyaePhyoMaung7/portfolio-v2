@@ -118,3 +118,6 @@ input[type="checkbox"]:checked + .display label .circle .moon {
 .nav-border-bottom {
   @apply border-b border-gray-300 dark:border-black;
 }
+.social-icon {
+  @apply w-[24px] h-[24px] flex justify-center items-center opacity-0;
+}

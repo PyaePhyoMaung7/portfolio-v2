@@ -185,37 +185,58 @@
       </div>
       <!-- main -->
       <main class="p-4 dark:bg-main-dark dark:text-white px-5 xs:px-10">
+        <!-- intro -->
         <section
           class="h-[calc(100lvh-85px)] flex flex-col sm:flex-row justify-center items-center sm:justify-around"
         >
           <div class="text-center">
-            <p class="mb-2 text-[20px] xs:text-[25px]" data-i18n="greet"></p>
-            <p class="mb-2 flex flex-wrap justify-center items-center">
-              <span
-                data-i18n="name1"
-                class="text-[25px] xs:text-[40px] font-bold whitespace-pre"
-              ></span>
-              <span
-                data-i18n="name2"
-                class="text-[25px] xs:text-[40px] font-bold"
-              ></span>
-              <span data-i18n="name3" class="text-[15px] xs:text-[20px]"></span>
-            </p>
-            <p
-              data-i18n="role"
-              class="mb-2 text-[22px] xs:text-[30px] font-semibold"
-            ></p>
-            <p class="mb-5 text-[15px] xs:text-[20px]" data-i18n="closing"></p>
+            <div class="overflow-hidden mb-2">
+              <p
+                class="profile-text text-[20px] xs:text-[25px] translate-y-[50px]"
+                data-i18n="greet"
+              ></p>
+            </div>
+            <div class="overflow-hidden mb-2">
+              <p
+                class="profile-text flex flex-wrap justify-center items-center translate-y-[50px]"
+              >
+                <span
+                  data-i18n="name1"
+                  class="text-[25px] xs:text-[40px] font-bold whitespace-pre"
+                ></span>
+                <span
+                  data-i18n="name2"
+                  class="text-[25px] xs:text-[40px] font-bold"
+                ></span>
+                <span
+                  data-i18n="name3"
+                  class="text-[15px] xs:text-[20px]"
+                ></span>
+              </p>
+            </div>
+            <div class="overflow-hidden mb-2">
+              <p
+                data-i18n="role"
+                class="profile-text text-[22px] xs:text-[30px] font-semibold translate-y-[50px]"
+              ></p>
+            </div>
+            <div class="overflow-hidden mb-5">
+              <p
+                class="profile-text text-[15px] xs:text-[20px] translate-y-[50px]"
+                data-i18n="closing"
+              ></p>
+            </div>
+
             <div class="mb-2">
               <a href="/cv/Pyae_Phyo_Maung_Resume.docx" download>
                 <button
-                  class="cv-button bg-highlight text-white px-6 py-2 cursor-pointer rounded-3xl"
+                  class="cv-button opacity-0 scale-80 bg-highlight text-white px-6 py-2 cursor-pointer rounded-3xl"
                   data-i18n="cvDownload"
                 ></button>
               </a>
             </div>
             <div
-              class="flex justify-center items-center overflow-hidden -mt-3 py-1 gap-10 h-[70px] -ml-6"
+              class="flex justify-center items-center overflow-hidden -mt-1 py-1 gap-2 h-[70px]"
             >
               <a
                 href="https://www.facebook.com/share/1DQHrNQGR8/"
@@ -314,11 +335,14 @@
             </div>
           </div>
           <div
+            id="profile-container"
             class="mt-5 sm:mt-0 w-[180px] h-[260px] md:w-[220px] md:h-[320px] overflow-clip border-b-2 border-highlight rounded-lg"
+            style="transform: scaleX(0.001); transform-origin: center center"
           >
             <img
+              id="profile-image"
               src="/images/profile.png"
-              class="object-cover object-center"
+              class="object-cover object-center opacity-0 scale-90"
               alt="profile image"
             />
           </div>
