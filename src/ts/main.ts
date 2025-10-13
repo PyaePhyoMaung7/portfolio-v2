@@ -1,11 +1,11 @@
 import { gsap } from "gsap";
-import { profile } from "./animation";
+import { about, profile } from "./animation";
 import { i18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadResources();
   setTimeout(display, 100);
-  setTimeout(showAnimations, 500);
+  setTimeout(showAnimations, 100);
 });
 
 // Display web
@@ -29,7 +29,7 @@ const loadResources = async () => {
   const btnJpText = btnJp!.querySelector<HTMLSpanElement>("#btn-jp-text");
   const modeToggle = document.querySelector<HTMLInputElement>("#mode-toggle");
   const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
-  const menu = document.querySelector<HTMLDivElement>("#menu");
+  const menuItems = document.querySelectorAll<HTMLButtonElement>(".menu-item");
 
   // Load saved or default language
   const storageKey = "lang";
@@ -78,25 +78,37 @@ const loadResources = async () => {
   });
 
   // Toggle menu
-  let isMenuOpen = false;
   menuBtn!.addEventListener("click", () => {
-    if (!isMenuOpen) {
-      gsap.to(menu, {
-        top: "45px",
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
-    } else {
-      gsap.to(menu, {
-        top: "-50px",
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
-    }
-    isMenuOpen = !isMenuOpen;
+    toggleMenu();
   });
+  menuItems!.forEach((item) => {
+    item.addEventListener("click", () => {
+      toggleMenu();
+    });
+  });
+};
+
+// Toggle Menu
+let isMenuOpen = false;
+const toggleMenu = () => {
+  const menu = document.querySelector<HTMLDivElement>("#menu");
+  if (!isMenuOpen) {
+    gsap.to(menu, {
+      top: "45px",
+      duration: 0.2,
+      ease: "power1.inOut",
+    });
+  } else {
+    gsap.to(menu, {
+      top: "-82px",
+      duration: 0.2,
+      ease: "power1.inOut",
+    });
+  }
+  isMenuOpen = !isMenuOpen;
 };
 
 const showAnimations = () => {
   profile();
+  about();
 };

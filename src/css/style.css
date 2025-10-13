@@ -46,7 +46,9 @@
   --breakpoint-xs: 590px;
   --breakpoint-2xs: 320px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   transition: 0.3s;
 }

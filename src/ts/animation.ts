@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export function profile() {
   const tl1 = gsap.timeline();
@@ -23,11 +25,11 @@ export function profile() {
         ease: "ease.out",
         stagger: 0.1,
       },
-      "<"
+      "-=0.3"
     );
   tl2
     .to("#profile-container", {
-      duration: 0.3,
+      duration: 0.2,
       scaleX: 1,
       ease: "power2.out",
     })
@@ -40,5 +42,51 @@ export function profile() {
         ease: "power2.out",
       },
       "+=0.3"
+    );
+}
+
+export function about() {
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#timeline",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+  tl1
+    .to("#timeline-item-1", {
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out",
+    })
+    .to("#line", { height: "30%", duration: 0.2, ease: "power2.out" })
+    .to(
+      "#timeline-item-2",
+      {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.out",
+      },
+      "+=0.2"
+    )
+    .to("#line", { height: "60%", duration: 0.2, ease: "power2.out" })
+    .to(
+      "#timeline-item-3",
+      {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.out",
+      },
+      "+=0.2"
+    )
+    .to("#line", { height: "85%", duration: 0.2, ease: "power2.out" })
+    .to(
+      "#timeline-item-4",
+      {
+        opacity: 1,
+        duration: 0.1,
+        ease: "power2.out",
+      },
+      "+=0.2"
     );
 }

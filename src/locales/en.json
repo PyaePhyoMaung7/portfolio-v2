@@ -1,5 +1,6 @@
 {
   "about": "About",
+  "tech": "Tech Stack",
   "project": "Projects",
   "contact": "Contact",
   "greet": "Hello It's me",
@@ -8,5 +9,11 @@
   "name3": "",
   "role": "Software Engineer",
   "closing": "I look forward to working with you",
-  "cvDownload": "Download CV"
+  "cvDownload": "Download CV",
+  "aboutTitle": "About Me",
+  "aboutText1": "I am a web developer with over 1 year of experience.",
+  "aboutText2": "I specialize in Vue, Nuxt and Laravel.",
+  "aboutText3": "Beyond the code, I take special care about accessibility, performance  and creating digital products that people enjoy using.",
+  "aboutText4": "Always learning, always  improving.",
+  "eduBg": "Education Background"
 }

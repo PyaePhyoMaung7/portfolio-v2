@@ -44,16 +44,25 @@
           class="flex justify-start items-center xs:text-lg font-semibold italic"
           style="font-family: cursive"
         >
-          Maung
+          <a href="#" class="text-sm font-semibold hover:text-highlight"
+            >Maung</a
+          >
         </div>
         <ul
-          class="hidden xs:flex justify-start sm:justify-center md:justify-end items-center gap-5 sm:gap-10 md:gap-18"
+          class="hidden xs:flex justify-start sm:justify-center md:justify-end items-center gap-5 sm:gap-7 md:gap-15 lg:gap-18"
         >
+          <li>
+            <a
+              href="#about"
+              class="text-sm font-semibold hover:text-highlight"
+              data-i18n="about"
+            ></a>
+          </li>
           <li>
             <a
               href="#"
               class="text-sm font-semibold hover:text-highlight"
-              data-i18n="about"
+              data-i18n="tech"
             ></a>
           </li>
           <li>
@@ -156,27 +165,34 @@
       <!-- Menu -->
       <div
         id="menu"
-        class="xs:hidden z-1 absolute top-[-50px] bg-white dark:bg-main-dark dark:title-dark"
+        class="xs:hidden z-1 fixed top-[-82px] bg-white dark:bg-main-dark dark:title-dark"
       >
         <ul class="z-1 px-5 xs:px-10 pb-2">
           <li class="pb-2">
             <a
-              href="#"
-              class="text-sm font-semibold hover:text-highlight"
+              href="#about"
+              class="menu-item text-sm font-semibold hover:text-highlight"
               data-i18n="about"
             ></a>
           </li>
           <li class="pb-2">
             <a
               href="#"
-              class="text-sm font-semibold hover:text-highlight"
+              class="menu-item text-sm font-semibold hover:text-highlight"
+              data-i18n="tech"
+            ></a>
+          </li>
+          <li class="pb-2">
+            <a
+              href="#"
+              class="menu-item text-sm font-semibold hover:text-highlight"
               data-i18n="project"
             ></a>
           </li>
           <li class="pb-1">
             <a
               href="#"
-              class="text-sm font-semibold hover:text-highlight"
+              class="menu-item text-sm font-semibold hover:text-highlight"
               data-i18n="contact"
             ></a>
           </li>
@@ -184,10 +200,13 @@
         <div class="w-screen nav-border-bottom"></div>
       </div>
       <!-- main -->
-      <main class="p-4 dark:bg-main-dark dark:text-white px-5 xs:px-10">
+      <main
+        class="p-4 dark:bg-main-dark dark:text-white px-5 xs:px-10 md:px-20 lg:px-30 xl:px-40"
+      >
         <!-- intro -->
         <section
-          class="h-[calc(100lvh-85px)] flex flex-col sm:flex-row justify-center items-center sm:justify-around"
+          id="intro"
+          class="h-[calc(100lvh-85px)] mb-10 flex flex-col sm:flex-row justify-center items-center sm:justify-between"
         >
           <div class="text-center">
             <div class="overflow-hidden mb-2">
@@ -345,6 +364,90 @@
               class="object-cover object-center opacity-0 scale-90"
               alt="profile image"
             />
+          </div>
+        </section>
+        <!-- about -->
+        <section
+          id="about"
+          class="h-100lvh md:h-[calc(100lvh-85px)] pt-[50px] mb-10 flex flex-col sm:flex-row justify-center sm:items-start sm:justify-between gap-8"
+        >
+          <div class="sm:max-w-[50%] sm:mb-0">
+            <h2 class="mb-8 font-semibold text-2xl" data-i18n="aboutTitle"></h2>
+            <div>
+              <ul>
+                <li><p class="mb-3" data-i18n="aboutText1"></p></li>
+                <li><p class="mb-3" data-i18n="aboutText2"></p></li>
+                <li><p class="mb-3" data-i18n="aboutText3"></p></li>
+                <li><p class="mb-3" data-i18n="aboutText4"></p></li>
+              </ul>
+            </div>
+            <div class="flex">
+              <div class="mr-5">
+                <span class="text-highlight text-[40px] relative"
+                  >1<span
+                    class="absolute top-0 right-[-15px] text-highlight text-xl font-bold"
+                    >+</span
+                  ></span
+                >
+                <span class="font-semibold text-xl">Experience</span>
+              </div>
+              <div>
+                <span class="text-highlight text-[40px] relative"
+                  >3<span
+                    class="absolute top-0 right-[-15px] text-highlight text-xl font-bold"
+                    >+</span
+                  ></span
+                >
+                <span class="font-semibold text-xl">Projects</span>
+              </div>
+            </div>
+          </div>
+          <!-- Timeline -->
+          <div class="sm:max-w-[50%]">
+            <h2 class="mb-8 font-semibold text-xl" data-i18n="eduBg"></h2>
+            <div id="timeline" class="relative ml-2">
+              <!-- Animated Line -->
+              <div
+                id="line"
+                class="absolute top-0 left-0 w-[2px] h-0 bg-highlight"
+              ></div>
+              <div id="timeline-item-1" class="mb-6 relative opacity-0">
+                <div
+                  class="absolute -left-1.5 w-[15px] h-[15px] bg-highlight rounded-full"
+                ></div>
+                <div class="ml-6 -translate-y-1">
+                  <p class="text-gray-600 text-sm">2022 ~ Present</p>
+                  <h3>Computer Science (University of the People)</h3>
+                </div>
+              </div>
+              <div id="timeline-item-2" class="mb-6 relative opacity-0">
+                <div
+                  class="absolute -left-1.5 w-[15px] h-[15px] bg-highlight rounded-full"
+                ></div>
+                <div class="ml-6 -translate-y-1">
+                  <p class="text-gray-600 text-sm">2022</p>
+                  <h3>Passed ITPEC (Fundamental Engineering)</h3>
+                </div>
+              </div>
+              <div id="timeline-item-3" class="mb-6 relative opacity-0">
+                <div
+                  class="absolute -left-1.5 w-[15px] h-[15px] bg-highlight rounded-full"
+                ></div>
+                <div class="ml-6 -translate-y-1">
+                  <p class="text-gray-600 text-sm">2023</p>
+                  <h3>Passed JLPT N3</h3>
+                </div>
+              </div>
+              <div id="timeline-item-4" class="mb-6 relative opacity-0">
+                <div
+                  class="absolute -left-1.5 w-[15px] h-[15px] bg-highlight rounded-full"
+                ></div>
+                <div class="ml-6 -translate-y-1">
+                  <p class="text-gray-600 text-sm">2024 ~ Present</p>
+                  <h3>English (Dagon University)</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
