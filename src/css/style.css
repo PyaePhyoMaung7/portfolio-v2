@@ -47,6 +47,17 @@
   --breakpoint-xs: 590px;
   --breakpoint-2xs: 320px;
 }
+
+.nav-border-bottom {
+  @apply border-b border-gray-300 dark:border-black;
+}
+.social-icon {
+  @apply w-[24px] h-[24px] flex justify-center items-center opacity-0;
+}
+.active-section {
+  @apply text-highlight;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -118,12 +129,62 @@ input[type="checkbox"]:checked + .display label .circle .moon {
   margin-left: 0%;
   opacity: 1;
 }
-.nav-border-bottom {
-  @apply border-b border-gray-300 dark:border-black;
+
+.marquee-wrapper {
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0)
+  );
 }
-.social-icon {
-  @apply w-[24px] h-[24px] flex justify-center items-center opacity-0;
+
+@keyframes scrollLeft {
+  to {
+    left: -180px;
+  }
 }
-.active-section {
-  @apply text-highlight;
+
+.marquee-item {
+  width: 180px;
+  position: absolute;
+  left: max(calc(180px * 7), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  @apply text-lg font-bold;
+}
+
+.item1 {
+  animation-delay: calc(30s / 7 * (7 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 7 * (7 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 7 * (7 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 7 * (7 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 7 * (7 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 7 * (7 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 7 * (7 - 7) * -1);
 }
