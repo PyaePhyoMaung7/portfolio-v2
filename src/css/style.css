@@ -43,6 +43,7 @@
 @theme {
   --font-inter: Inter, sans-serif;
   --font-mincho: Mincho, sans-serif;
+  --breakpoint-3xl: 1920px;
   --breakpoint-xs: 590px;
   --breakpoint-2xs: 320px;
 }
@@ -122,4 +123,7 @@ input[type="checkbox"]:checked + .display label .circle .moon {
 }
 .social-icon {
   @apply w-[24px] h-[24px] flex justify-center items-center opacity-0;
+}
+.active-section {
+  @apply text-highlight;
 }

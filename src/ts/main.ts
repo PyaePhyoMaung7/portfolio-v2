@@ -29,7 +29,8 @@ const loadResources = async () => {
   const btnJpText = btnJp!.querySelector<HTMLSpanElement>("#btn-jp-text");
   const modeToggle = document.querySelector<HTMLInputElement>("#mode-toggle");
   const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
-  const menuItems = document.querySelectorAll<HTMLButtonElement>(".menu-item");
+  // const menuItems = document.querySelectorAll<HTMLButtonElement>(".menu-item");
+  const main = document.querySelector<HTMLElement>("#main");
 
   // Load saved or default language
   const storageKey = "lang";
@@ -81,9 +82,34 @@ const loadResources = async () => {
   menuBtn!.addEventListener("click", () => {
     toggleMenu();
   });
-  menuItems!.forEach((item) => {
-    item.addEventListener("click", () => {
+  main!.addEventListener("click", () => {
+    if (isMenuOpen) {
       toggleMenu();
+    }
+  });
+  // menuItems!.forEach((item) => {
+  //   item.addEventListener("click", () => {
+  //     toggleMenu();
+  //   });
+  // });
+
+  // Update tab on scroll
+  const sections = document.querySelectorAll<HTMLElement>(".section");
+  const tabs = document.querySelectorAll<HTMLAnchorElement>(".tab");
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY + window.innerHeight / 2;
+    tabs.forEach((tab) => {
+      tab.classList.remove("active-section");
+    });
+    sections.forEach((section) => {
+      const currentTabs = document.querySelectorAll<HTMLAnchorElement>(
+        `.${section.id}-tab`
+      );
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (scrollPos >= top && scrollPos < bottom) {
+        currentTabs.forEach((tab) => tab!.classList.add("active-section"));
+      }
     });
   });
 };
