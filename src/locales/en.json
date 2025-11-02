@@ -27,5 +27,8 @@
   "kenjaCloudDescription": "A school management system designed to manage teachers, students, attendance, grading, timetables, and other operations for Japanese schools.",
   "poddyDescription": "A podcast management system that allows users to upload podcasts, write blogs, customize themes, and manage guests with a smooth backend and dynamic frontend.",
   "laPayyDescription": "A takeout subscription platform where users subscribe monthly to favorite restaurants for daily meal deliveries, streamlining customer management efficiently.",
-  "contactTitle": "Contact Me"
+  "contactTitle": "Contact Me",
+  "contactText1": "Do you have a project in mind ?",
+  "contactText2": "Feel free to contact me via social media or email",
+  "contactText3": "I am looking forward to working with like-minded and passionate professionals"
 }
