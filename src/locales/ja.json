@@ -14,5 +14,18 @@
   "aboutText2": "Vue、Nuxt、Laravel を主に使って開発しています。",
   "aboutText3": "コードだけでなく、アクセシビリティ、パフォーマンス、そして人々が 楽しく 使えるデジタル製品の創造にも力を入れています。",
   "aboutText4": "常に学び、常に成長しています。",
-  "eduBg": "学歴"
+  "eduBg": "学歴",
+  "uopDate": "2022年〜現在",
+  "uopDescription": "コンピュータサイエンス専攻（University of the People）",
+  "feDate": "2022年",
+  "feDescription": "ITPEC（基礎工学）合格",
+  "jlptDate": "2023年",
+  "jlptDescription": "日本語能力試験 N3 合格",
+  "dagonDate": "2024年〜現在",
+  "dagonDescription": "英語専攻（Dagon University）",
+  "projectTitle": "プロジェクト",
+  "kenjaCloudDescription": "教師、生徒、出席、成績、時間割、その他日本の学校の運営に必要な機能を管理するための学校管理システムです。",
+  "poddyDescription": "ユーザーがポッドキャストを管理・公開し、テーマをカスタマイズできる、動的なフロントエンドとスムーズなバックエンドを備えた管理システムです。",
+  "laPayyDescription": "ユーザーが毎月お気に入りのレストランに登録して、毎日の食事配達を受けられるテイクアウトサブスクリプションプラットフォームで、顧客管理を効率化します。",
+  "contactTitle": "ご連絡"
 }

@@ -14,5 +14,18 @@
   "aboutText2": "I specialize in Vue, Nuxt and Laravel.",
   "aboutText3": "Beyond the code, I take special care about accessibility, performance  and creating digital products that people enjoy using.",
   "aboutText4": "Always learning, always  improving.",
-  "eduBg": "Education Background"
+  "eduBg": "Education Background",
+  "uopDate": "2022 ~ Present",
+  "uopDescription": "Computer Science (University of the People)",
+  "feDate": "2022",
+  "feDescription": "Passed ITPEC (Fundamental Engineering)",
+  "jlptDate": "2023",
+  "jlptDescription": "Passed JLPT N3",
+  "dagonDate": "2024 ~ Present",
+  "dagonDescription": "English (Dagon University)",
+  "projectTitle": "Projects",
+  "kenjaCloudDescription": "A school management system designed to manage teachers, students, attendance, grading, timetables, and other operations for Japanese schools.",
+  "poddyDescription": "A podcast management system that allows users to upload podcasts, write blogs, customize themes, and manage guests with a smooth backend and dynamic frontend.",
+  "laPayyDescription": "A takeout subscription platform where users subscribe monthly to favorite restaurants for daily meal deliveries, streamlining customer management efficiently.",
+  "contactTitle": "Contact Me"
 }

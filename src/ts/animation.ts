@@ -90,3 +90,28 @@ export function about() {
       "+=0.2"
     );
 }
+
+export function projects() {
+  const cards = gsap.utils.toArray<HTMLElement>(".card");
+  // group cards by their top offset (row)
+  const rows = cards.reduce((acc, card) => {
+    const top = Math.round(card.getBoundingClientRect().top + window.scrollY);
+    if (!acc[top]) acc[top] = [];
+    acc[top].push(card);
+    return acc;
+  }, {} as Record<number, HTMLElement[]>);
+  // animate each row separately
+  Object.values(rows).forEach((rowCards) => {
+    gsap.to(rowCards, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.3,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: rowCards[0], // use the first card of the row as trigger
+        start: "top 80%", // when this row hits 80% of viewport
+      },
+    });
+  });
+}

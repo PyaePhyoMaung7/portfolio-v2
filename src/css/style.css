@@ -24,6 +24,9 @@
 @utility title-light {
   color: #dfdfd6;
 }
+@utility shadow-highlight {
+  box-shadow: 2px 2px 5px rgba(139, 64, 198, 0.5);
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 

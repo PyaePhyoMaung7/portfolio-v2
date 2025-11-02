@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { about, profile } from "./animation";
+import { about, profile, projects } from "./animation";
 import { i18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -29,7 +29,6 @@ const loadResources = async () => {
   const btnJpText = btnJp!.querySelector<HTMLSpanElement>("#btn-jp-text");
   const modeToggle = document.querySelector<HTMLInputElement>("#mode-toggle");
   const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
-  // const menuItems = document.querySelectorAll<HTMLButtonElement>(".menu-item");
   const main = document.querySelector<HTMLElement>("#main");
 
   // Load saved or default language
@@ -87,11 +86,6 @@ const loadResources = async () => {
       toggleMenu();
     }
   });
-  // menuItems!.forEach((item) => {
-  //   item.addEventListener("click", () => {
-  //     toggleMenu();
-  //   });
-  // });
 
   // Update tab on scroll
   const sections = document.querySelectorAll<HTMLElement>(".section");
@@ -137,4 +131,5 @@ const toggleMenu = () => {
 const showAnimations = () => {
   profile();
   about();
+  projects();
 };
