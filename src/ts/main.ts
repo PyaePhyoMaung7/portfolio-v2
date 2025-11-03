@@ -106,6 +106,75 @@ const loadResources = async () => {
       }
     });
   });
+
+  // Set up cursor trail
+  interface CircleElement extends HTMLDivElement {
+    x: number;
+    y: number;
+  }
+
+  const coords = { x: 0, y: 0 };
+  const circles = Array.from(
+    document.querySelectorAll(".cursor-circle")
+  ) as CircleElement[];
+
+  circles.forEach((circle) => {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = "rgba(139, 64, 198, 0.12)";
+    circle.style.position = "fixed";
+    circle.style.width = "24px";
+    circle.style.height = "24px";
+    circle.style.borderRadius = "50%";
+    circle.style.pointerEvents = "none";
+    circle.style.zIndex = "9999";
+    circle.style.transition = "transform 0.1s linear, opacity 0.3s ease";
+    circle.style.opacity = "0";
+  });
+
+  let isInView = false;
+  window.addEventListener("mousemove", (e: MouseEvent) => {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+
+    if (!isInView) {
+      circles.forEach((circle) => (circle.style.opacity = "1"));
+      isInView = true;
+    }
+  });
+
+  document.documentElement.addEventListener("mouseleave", () => {
+    circles.forEach((circle) => (circle.style.opacity = "0"));
+    isInView = false;
+  });
+
+  const animateCircles = () => {
+    if (!isInView) {
+      requestAnimationFrame(animateCircles);
+      return;
+    }
+
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach((circle, index) => {
+      circle.style.left = `${x - 12}px`;
+      circle.style.top = `${y - 12}px`;
+      circle.style.transform = `scale(${
+        (circles.length - index) / circles.length
+      })`;
+      circle.x = x;
+      circle.y = y;
+
+      const next = circles[index + 1] || circles[0];
+      x += (next.x - x) * 0.3;
+      y += (next.y - y) * 0.3;
+    });
+
+    requestAnimationFrame(animateCircles);
+  };
+
+  animateCircles();
 };
 
 // Toggle Menu
@@ -114,13 +183,13 @@ const toggleMenu = () => {
   const menu = document.querySelector<HTMLDivElement>("#menu");
   if (!isMenuOpen) {
     gsap.to(menu, {
-      top: "45px",
+      top: "50px",
       duration: 0.2,
       ease: "power1.inOut",
     });
   } else {
     gsap.to(menu, {
-      top: "-82px",
+      top: "-50px",
       duration: 0.2,
       ease: "power1.inOut",
     });
