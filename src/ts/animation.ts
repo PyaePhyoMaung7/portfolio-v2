@@ -48,15 +48,15 @@ export function profile() {
 export function about() {
   const tl1 = gsap.timeline({
     scrollTrigger: {
-      trigger: "#timeline",
-      start: "top 80%",
+      trigger: "#about-intro",
+      start: "top 85%",
       toggleActions: "play none none none",
     },
   });
   const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: "#timeline",
-      start: "top 80%",
+      start: "top 85%",
       toggleActions: "play none none none",
     },
   });
@@ -155,7 +155,7 @@ export function projects() {
       ease: "power2.out",
       scrollTrigger: {
         trigger: rowCards[0], // use the first card of the row as trigger
-        start: "top 80%", // when this row hits 80% of viewport
+        start: "top 85%", // when this row hits 80% of viewport
       },
     });
   });
@@ -169,7 +169,7 @@ export function contact() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#contact",
-      start: "top 80%",
+      start: "top 85%",
       toggleActions: "play none none none",
     },
   });
@@ -187,7 +187,7 @@ export function contact() {
   const typingTl = gsap.timeline({
     scrollTrigger: {
       trigger: "#contact",
-      start: "top 80%",
+      start: "top 85%",
       toggleActions: "play none none none",
     },
   });
