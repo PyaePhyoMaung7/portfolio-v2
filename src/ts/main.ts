@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { about, profile, projects } from "./animation";
+import { about, contact, profile, projects } from "./animation";
 import { i18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -132,4 +132,5 @@ const showAnimations = () => {
   profile();
   about();
   projects();
+  contact();
 };

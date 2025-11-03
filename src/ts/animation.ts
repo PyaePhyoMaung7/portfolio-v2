@@ -53,13 +53,58 @@ export function about() {
       toggleActions: "play none none none",
     },
   });
+  const tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#timeline",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
   tl1
-    .to("#timeline-item-1", {
-      opacity: 1,
+    .to(".about-text", {
       duration: 0.3,
+      y: 0,
+      stagger: 0.2,
       ease: "power2.out",
     })
-    .to("#line", { height: "30%", duration: 0.2, ease: "power2.out" })
+    .to(".count", {
+      scale: 1.5,
+      opacity: 1,
+      duration: 0.2,
+      ease: "power2.out",
+    })
+    .to(".count", {
+      scale: 1,
+      duration: 0.2,
+      ease: "power2.out",
+    })
+    .to(".count", {
+      scale: 1.3,
+      duration: 0.2,
+      ease: "power2.out",
+    })
+    .to(".count", {
+      scale: 1,
+      duration: 0.2,
+      ease: "power2.out",
+    })
+    .to(
+      ".plus",
+      {
+        opacity: 1,
+        duration: 0.2,
+        ease: "power2.out",
+      },
+      "-=0.4"
+    );
+
+  tl2
+    .to("#timeline-item-1", {
+      opacity: 1,
+      duration: 0.2,
+      ease: "power2.out",
+    })
+    .to("#line", { height: "30%", duration: 0.1, ease: "power2.out" })
     .to(
       "#timeline-item-2",
       {
@@ -69,7 +114,7 @@ export function about() {
       },
       "+=0.2"
     )
-    .to("#line", { height: "60%", duration: 0.2, ease: "power2.out" })
+    .to("#line", { height: "60%", duration: 0.1, ease: "power2.out" })
     .to(
       "#timeline-item-3",
       {
@@ -79,7 +124,7 @@ export function about() {
       },
       "+=0.2"
     )
-    .to("#line", { height: "85%", duration: 0.2, ease: "power2.out" })
+    .to("#line", { height: "85%", duration: 0.1, ease: "power2.out" })
     .to(
       "#timeline-item-4",
       {
@@ -114,4 +159,62 @@ export function projects() {
       },
     });
   });
+}
+
+export function contact() {
+  const textEl3 = document.querySelector(".contact-text3") as HTMLElement;
+  const messageBodyStr = textEl3.textContent || "";
+  textEl3.textContent = "";
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+  tl.to(".contact-text", {
+    duration: 0.3,
+    y: 0,
+    delay: 0.2,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+
+  const speed = 15;
+  const endFlashSpeed = 0.5;
+  const cursor = "|";
+  const typingTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+  typingTl
+    .to(
+      {},
+      {
+        duration: messageBodyStr.length / speed,
+        ease: "none",
+        onUpdate: function () {
+          const progress = this.progress();
+          const currentLength = Math.floor(progress * messageBodyStr.length);
+          textEl3.textContent =
+            messageBodyStr.substring(0, currentLength) + cursor;
+        },
+        onComplete: function () {
+          textEl3.textContent = messageBodyStr;
+        },
+      },
+      "+=0.5"
+    )
+    .to(".cursor", {
+      opacity: 1,
+      duration: 0,
+      repeat: -1,
+      yoyo: true,
+      repeatDelay: endFlashSpeed,
+      ease: "none",
+    });
 }

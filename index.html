@@ -193,7 +193,7 @@
         <!-- intro -->
         <section
           id="intro"
-          class="section h-[calc(100lvh-85px)] mb-10 flex flex-col sm:flex-row justify-center items-center sm:justify-between"
+          class="section min-h-[calc(100lvh-85px)] mb-10 flex flex-col sm:flex-row justify-center items-center sm:justify-between"
         >
           <div class="text-center">
             <div class="overflow-hidden mb-2">
@@ -365,7 +365,10 @@
           </div>
         </section>
         <!-- about -->
-        <section id="about" class="section pt-[100px] mb-10">
+        <section
+          id="about"
+          class="section min-h-[calc(100lvh-85px)] pt-[60px] xs:pt-[100px] mb-10"
+        >
           <div
             class="flex flex-col sm:flex-row justify-center sm:items-start sm:justify-between gap-8"
           >
@@ -376,30 +379,62 @@
               ></h2>
               <div>
                 <ul>
-                  <li><p class="mb-3" data-i18n="aboutText1"></p></li>
-                  <li><p class="mb-3" data-i18n="aboutText2"></p></li>
-                  <li><p class="mb-3" data-i18n="aboutText3"></p></li>
-                  <li><p class="mb-3" data-i18n="aboutText4"></p></li>
+                  <li>
+                    <div class="overflow-hidden mb-3">
+                      <p
+                        class="about-text translate-y-[50px]"
+                        data-i18n="aboutText1"
+                      ></p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overflow-hidden mb-3">
+                      <p
+                        class="about-text translate-y-[50px]"
+                        data-i18n="aboutText2"
+                      ></p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overflow-hidden mb-3">
+                      <p
+                        class="about-text translate-y-[50px]"
+                        data-i18n="aboutText3"
+                      ></p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overflow-hidden mb-3">
+                      <p
+                        class="about-text translate-y-[50px]"
+                        data-i18n="aboutText4"
+                      ></p>
+                    </div>
+                  </li>
                 </ul>
               </div>
-              <div class="flex">
-                <div class="mr-5">
-                  <span class="text-highlight text-[40px] relative"
-                    >1<span
-                      class="absolute top-0 right-[-15px] text-highlight text-xl font-bold"
-                      >+</span
-                    ></span
-                  >
-                  <span class="font-semibold text-xl">Experience</span>
-                </div>
-                <div>
-                  <span class="text-highlight text-[40px] relative"
-                    >3<span
-                      class="absolute top-0 right-[-15px] text-highlight text-xl font-bold"
-                      >+</span
-                    ></span
-                  >
-                  <span class="font-semibold text-xl">Projects</span>
+              <div class="overflow-hidden">
+                <div class="about-text translate-y-[50px] flex">
+                  <div class="mr-5">
+                    <span class="text-highlight text-[40px] relative"
+                      ><span class="count inline-block opacity-0">1</span
+                      ><span
+                        class="plus opacity-0 absolute top-0 right-[-15px] text-highlight text-xl font-bold"
+                        >+</span
+                      ></span
+                    >
+                    <span class="font-semibold text-xl">Experience</span>
+                  </div>
+                  <div>
+                    <span class="text-highlight text-[40px] relative"
+                      ><span class="count inline-block opacity-0">3</span
+                      ><span
+                        class="plus opacity-0 absolute top-0 right-[-15px] text-highlight text-xl font-bold"
+                        >+</span
+                      ></span
+                    >
+                    <span class="font-semibold text-xl">Projects</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -673,7 +708,10 @@
           </div>
         </section>
         <!-- project -->
-        <section id="project" class="section pt-[100px] mb-10">
+        <section
+          id="project"
+          class="section min-h-[calc(100lvh-85px)] pt-[60px] xs:pt-[100px] mb-10"
+        >
           <h2
             class="mb-8 font-semibold text-2xl text-center"
             data-i18n="projectTitle"
@@ -818,13 +856,26 @@
           </div>
         </section>
         <!-- contact -->
-        <section id="contact" class="section pt-[100px] mb-10">
+        <section
+          id="contact"
+          class="section min-h-[calc(100lvh-85px)] pt-[60px] xs:pt-[100px] mb-10"
+        >
           <h2
             class="mb-8 font-semibold text-2xl text-center"
             data-i18n="contactTitle"
           ></h2>
-          <p class="text-center mb-8" data-i18n="contactText1"></p>
-          <p class="text-center mb-8" data-i18n="contactText2"></p>
+          <div class="overflow-hidden text-center mb-8">
+            <p
+              class="contact-text translate-y-[50px]"
+              data-i18n="contactText1"
+            ></p>
+          </div>
+          <div class="overflow-hidden text-center mb-8">
+            <p
+              class="contact-text translate-y-[50px]"
+              data-i18n="contactText2"
+            ></p>
+          </div>
           <div class="flex flex-wrap justify-center items-center gap-2 mb-8">
             <a
               href="https://www.facebook.com/share/1DQHrNQGR8/"
@@ -850,7 +901,6 @@
                 <span class="ml-5 text-sm">facebook</span>
               </div>
             </a>
-
             <a
               href="https://www.instagram.com/hakkai_0w0?igsh=MTh6bjNybXJ0dmszOQ=="
               title="instagram"
@@ -877,82 +927,80 @@
                 <span class="ml-7 text-sm">instagram</span>
               </div>
             </a>
-            <a
-              href="https://github.com/PyaePhyoMaung7"
-              title="github"
-            >
-            <div
+            <a href="https://github.com/PyaePhyoMaung7" title="github">
+              <div
                 class="flex items-center border rounded-full py-1 px-2 border-highlight hover:scale-105"
               >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8b40c6"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-github scale-90"
-              >
-                <path
-                  d="M9 19c-5 1.5 -5 -2.5 -7 -3m14 6v-3.87a3.366 3.366 0 0 0 -0.94 -2.61c3.14 -0.351 6.44 -1.54 6.44 -7a5.438 5.438 0 0 0 -1.5 -3.751 5.074 5.074 0 0 0 -0.09 -3.769s-1.179 -0.35 -3.91 1.48a13.401 13.401 0 0 0 -7 0c-2.73 -1.83 -3.91 -1.48 -3.91 -1.48a5.074 5.074 0 0 0 -0.09 3.769 5.438 5.438 0 0 0 -1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.366 3.366 0 0 0 -0.94 2.58v3.871"
-                />
-              </svg>
-              <span class="ml-6 text-sm">github</span>
-            </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-github scale-90"
+                >
+                  <path
+                    d="M9 19c-5 1.5 -5 -2.5 -7 -3m14 6v-3.87a3.366 3.366 0 0 0 -0.94 -2.61c3.14 -0.351 6.44 -1.54 6.44 -7a5.438 5.438 0 0 0 -1.5 -3.751 5.074 5.074 0 0 0 -0.09 -3.769s-1.179 -0.35 -3.91 1.48a13.401 13.401 0 0 0 -7 0c-2.73 -1.83 -3.91 -1.48 -3.91 -1.48a5.074 5.074 0 0 0 -0.09 3.769 5.438 5.438 0 0 0 -1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.366 3.366 0 0 0 -0.94 2.58v3.871"
+                  />
+                </svg>
+                <span class="ml-6 text-sm">github</span>
+              </div>
+            </a>
             <a
               href="https://www.linkedin.com/in/pyae-phyo-maung-a534672b2/"
               title="linkedin"
             >
-            <div
+              <div
                 class="flex items-center border rounded-full py-1 px-2 border-highlight hover:scale-105"
               >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8b40c6"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-linkedin scale-90"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                ></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <span class="ml-6 text-sm">linkedin</span>
-            </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-linkedin scale-90"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span class="ml-6 text-sm">linkedin</span>
+              </div>
             </a>
-            <a
-              href="mailto:pyaephyomg1004@gmail.com"
-              title="gmail"
-            >
-            <div
+            <a href="mailto:pyaephyomg1004@gmail.com" title="gmail">
+              <div
                 class="flex items-center border rounded-full py-1 px-2 border-highlight hover:scale-105"
               >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8b40c6"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-mail scale-90"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span class="ml-6 text-sm">mail</span>
-            </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b40c6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-mail scale-90"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="ml-6 text-sm">mail</span>
+              </div>
             </a>
           </div>
-          <p class="text-center mb-8" data-i18n="contactText3"></p>
+          <div class="text-center mb-8">
+            <span class="contact-text3" data-i18n="contactText3"></span>
+            <span class="cursor opacity-0 -ml-1">|</span>
+          </div>
         </section>
       </main>
       <!-- footer -->
