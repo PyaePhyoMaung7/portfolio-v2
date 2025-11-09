@@ -185,3 +185,8 @@ input[type="checkbox"]:checked + .display label .circle .moon {
 .marquee-wrapper:hover .marquee-item {
   animation-play-state: paused;
 }
+@media (hover: none), (pointer: coarse) {
+  .cursor-circle {
+    display: none !important;
+  }
+}

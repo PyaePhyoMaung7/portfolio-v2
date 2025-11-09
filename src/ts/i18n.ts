@@ -10,6 +10,7 @@ class I18n {
   setLang(lang: string) {
     this.currentLang = lang;
     this.updateTexts();
+    this.updateCV();
   }
 
   t(key: string): string {
@@ -23,6 +24,23 @@ class I18n {
       el.textContent = this.t(key);
     });
   }
+
+  private updateCV = () => {
+    const cvLink = document.getElementById("cv-link") as HTMLAnchorElement;
+    let fileName = "";
+    switch (this.currentLang) {
+      case "en":
+        fileName = "Pyae_Phyo_Maung_Resume.docx";
+        break;
+      case "ja":
+        fileName = "ピェッピョーマウン_履歴書.docx";
+        break;
+      default:
+        fileName = "Pyae_Phyo_Maung_Resume.docx";
+        break;
+    }
+    cvLink.href = `/cv/${fileName}`;
+  };
 }
 
 export const i18n = new I18n();

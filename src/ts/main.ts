@@ -133,20 +133,6 @@ const loadResources = async () => {
   });
 
   let isInView = false;
-  window.addEventListener("mousemove", (e: MouseEvent) => {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-
-    if (!isInView) {
-      circles.forEach((circle) => (circle.style.opacity = "1"));
-      isInView = true;
-    }
-  });
-
-  document.documentElement.addEventListener("mouseleave", () => {
-    circles.forEach((circle) => (circle.style.opacity = "0"));
-    isInView = false;
-  });
 
   const animateCircles = () => {
     if (!isInView) {
@@ -174,7 +160,31 @@ const loadResources = async () => {
     requestAnimationFrame(animateCircles);
   };
 
-  animateCircles();
+  const initCursorEffect = () => {
+    window.addEventListener("mousemove", (e: MouseEvent) => {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+
+      if (!isInView) {
+        circles.forEach((circle) => (circle.style.opacity = "1"));
+        isInView = true;
+      }
+    });
+
+    document.documentElement.addEventListener("mouseleave", () => {
+      circles.forEach((circle) => (circle.style.opacity = "0"));
+      isInView = false;
+    });
+    animateCircles();
+  };
+
+  const isDesktopLike = window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+  ).matches;
+  // cursor effect disabled on mobile/tablet
+  if (isDesktopLike) {
+    initCursorEffect();
+  }
 };
 
 // Toggle Menu
