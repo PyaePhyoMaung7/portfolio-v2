@@ -193,7 +193,7 @@ const toggleMenu = () => {
   const menu = document.querySelector<HTMLDivElement>("#menu");
   if (!isMenuOpen) {
     gsap.to(menu, {
-      top: "50px",
+      top: "48px",
       duration: 0.2,
       ease: "power1.inOut",
     });
