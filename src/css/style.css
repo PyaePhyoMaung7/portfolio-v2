@@ -154,33 +154,36 @@ input[type="checkbox"]:checked + .display label .circle .moon {
 .marquee-item {
   width: 180px;
   position: absolute;
-  left: max(calc(180px * 7), 100%);
+  left: max(calc(180px * 8), 100%);
   animation-name: scrollLeft;
-  animation-duration: 30s;
+  animation-duration: 33s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   @apply text-lg font-bold;
 }
 .item1 {
-  animation-delay: calc(30s / 7 * (7 - 1) * -1);
+  animation-delay: calc(33s / 8 * (8 - 1) * -1);
 }
 .item2 {
-  animation-delay: calc(30s / 7 * (7 - 2) * -1);
+  animation-delay: calc(33s / 8 * (8 - 2) * -1);
 }
 .item3 {
-  animation-delay: calc(30s / 7 * (7 - 3) * -1);
+  animation-delay: calc(33s / 8 * (8 - 3) * -1);
 }
 .item4 {
-  animation-delay: calc(30s / 7 * (7 - 4) * -1);
+  animation-delay: calc(33s / 8 * (8 - 4) * -1);
 }
 .item5 {
-  animation-delay: calc(30s / 7 * (7 - 5) * -1);
+  animation-delay: calc(33s / 8 * (8 - 5) * -1);
 }
 .item6 {
-  animation-delay: calc(30s / 7 * (7 - 6) * -1);
+  animation-delay: calc(33s / 8 * (8 - 6) * -1);
 }
 .item7 {
-  animation-delay: calc(30s / 7 * (7 - 7) * -1);
+  animation-delay: calc(33s / 8 * (8 - 7) * -1);
+}
+.item8 {
+  animation-delay: calc(33s / 8 * (8 - 8) * -1);
 }
 .marquee-wrapper:hover .marquee-item {
   animation-play-state: paused;

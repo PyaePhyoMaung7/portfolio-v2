@@ -154,7 +154,7 @@ export function projects() {
       duration: 0.3,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: rowCards[0], // use the first card of the row as trigger
+        trigger: "#card-container",
         start: "top 85%", // when this row hits 80% of viewport
       },
     });
