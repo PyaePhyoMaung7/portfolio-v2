@@ -11,6 +11,7 @@ class I18n {
     this.currentLang = lang;
     this.updateTexts();
     this.updateCV();
+    this.updateSeo();
   }
 
   t(key: string): string {
@@ -40,6 +41,37 @@ class I18n {
         break;
     }
     cvLink.href = `/cv/${fileName}`;
+  };
+
+  private updateSeo = () => {
+    const title = document.querySelector("title");
+    const description = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector(
+      'meta[property="og:description"]',
+    );
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]',
+    );
+
+    const isJapanese = this.currentLang === "ja";
+    document.documentElement.lang = isJapanese ? "ja" : "en";
+
+    const seoTitle = isJapanese
+      ? "ピェッピョーマウン | ソフトウェアエンジニア"
+      : "Pyae Phyo Maung | Software Engineer";
+    const seoDescription = isJapanese
+      ? "Vue、Nuxt、Laravel を中心に開発するソフトウェアエンジニアです。アクセシブルで使いやすいウェブ体験を設計・実装します。"
+      : "Software engineer specializing in modern web development, Vue, Nuxt, Laravel, and accessible digital experiences.";
+
+    if (title) title.textContent = seoTitle;
+    if (description) description.setAttribute("content", seoDescription);
+    if (ogTitle) ogTitle.setAttribute("content", seoTitle);
+    if (ogDescription) ogDescription.setAttribute("content", seoDescription);
+    if (twitterTitle) twitterTitle.setAttribute("content", seoTitle);
+    if (twitterDescription)
+      twitterDescription.setAttribute("content", seoDescription);
   };
 }
 
